@@ -1,5 +1,6 @@
 'use strict'
 var exec = require("child_process").exec,
+    execFile = require("child_process").execFile,
     querystring = require("querystring"),
     fs = require("fs"),
     path = require('path'),
@@ -7,7 +8,7 @@ var exec = require("child_process").exec,
     formidable = require("formidable");
 
 function start(response, request) {
-    console.log("Request handler 'start' was called.", root);
+    console.log("Request handler 'start' was called.");
 
     var body = '<html>'+
     '<head>'+
@@ -17,10 +18,20 @@ function start(response, request) {
     '<body>'+
     '<form action="/upload" enctype="multipart/form-data"  method="post">'+
     '<input type="file" name="upload">'+
+    '<input type="text" name="aa">'+
     '<input type="submit" value="Submit text" />'+
     '</form>'+
     '</body>'+
     '</html>';
+    // execFile('node', [path.join(root, '/test.js')], (error, stdout, stderr) => {
+    execFile('zsh', [path.join(root, '/test.sh')], (error, stdout, stderr) => {
+        if (error){
+            console.log('error');
+            return;
+        }
+        console.log(`test.js out ${stdout}；；；；${process}`);
+        console.dir(process);
+    });
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(body);
@@ -30,7 +41,7 @@ function start(response, request) {
 function upload(response, request) {
     console.log("Request handler 'upload' was called.");
     var form = new formidable.IncomingForm();
-    console.log("about to parse");
+
     form.parse(request, function(error, fields, files) {
         console.log("parsing done");
         fs.renameSync(files.upload.path, path.join(root, '/img/test.png'));
@@ -42,7 +53,7 @@ function upload(response, request) {
 }
 
 function show(response, request){
-    console.log("Request handler 'show' was called.")
+    console.log("Request handler 'show' was called.");
     fs.readFile(path.join(root, '/img/test.png'), "binary", function(error, file) {
         if(error){
             response.writeHead(500, {"Content-Type": "text/png"});
