@@ -1,0 +1,108 @@
+@charset "utf-8";
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea{margin:0;padding:0;}
+body {
+    color:#333;
+    font:12px Arial,"Microsoft YaHei","Hiragino Sans GB","STHeiti",SimSun !important;
+    background:#f2f2f2;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal;}
+li{list-style:none;}
+img {border:none;vertical-align:top;}
+input, select, input, textarea {font-size:12px;outline:none;}
+select, input {vertical-align:middle;}
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {border:none;padding:0;}
+textarea {overflow:auto;resize:none;}
+fieldset {border:none;}
+table {border-collapse:collapse;border-spacing:0;}
+caption, th {text-align:left;}
+address, cite, code, em, th, i, strong {font-style:normal;font-weight:normal;}
+a{color:#0041D9;text-decoration:none;outline:none;}
+a:hover {color:#f60;text-decoration:none;}
+
+.clearfix:after, #content:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix, #content{*zoom:1;}
+.clearboth{clear:both;font-size:0px;line-height:0px;height:0px;text-align:center;}
+.clear{ clear:both; margin:0; padding:0; height:0; _display:inline;}
+/* ---------- 全局样式 ---------- */
+
+body {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+a:hover {
+    border-bottom: 3px solid #4fc08d;
+}
+
+.button {
+    background-color: #4fc08d !important;
+    color: #fff !important;
+}
+
+.avatar {
+    border-radius: 3px;
+    width: 48px;
+    height: 48px;
+    float: right;
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+    margin-bottom: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.nav h1 {
+    color: #4fc08d;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* ---------- nav-setting ---------- */
+
+.nav-setting {
+    position: fixed;
+    right: 30px;
+    top: 35px;
+    z-index: 999;
+}
+
+.nav-setting .ui.dropdown.button {
+    padding: 10px 10px 0 10px;
+    background-color: #fff !important;
+}
+
+.nav-setting .icon.bars {
+    color: #000;
+    font-size: 18px;
+}
+
+/* ---------- post-content ---------- */
+
+.post-content h3 a {
+    color: #4fc08d !important;
+}
+
+.post-content .tag {
+    font-size: 13px;
+    margin-right: 5px;
+    color: #999;
+}
+
+.post-content .tag.right {
+    float: right;
+    margin-right: 0;
+}
+
+.post-content .tag.right a {
+    color: #999;
+}
